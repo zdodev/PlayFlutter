@@ -9,6 +9,7 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -21,6 +22,7 @@ import '../../features/user_profile/domain/repositories/user_repository.dart'
 import '../../features/user_profile/domain/usercases/get_user_profile_usecase.dart'
     as _i892;
 import '../../features/user_profile/presentation/bloc/user_bloc.dart' as _i12;
+import '../network/dio_network_module.dart' as _i352;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -29,8 +31,10 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final networkModule = _$NetworkModule();
+    gh.lazySingleton<_i361.Dio>(() => networkModule.dio);
     gh.lazySingleton<_i326.UserRemoteDataSource>(
-      () => _i326.UserRemoteDataSourceImpl(),
+      () => _i326.UserRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
     gh.lazySingleton<_i830.UserRepository>(
       () => _i943.UserRepositoryImpl(gh<_i326.UserRemoteDataSource>()),
@@ -44,3 +48,5 @@ extension GetItInjectableX on _i174.GetIt {
     return this;
   }
 }
+
+class _$NetworkModule extends _i352.NetworkModule {}

@@ -9,9 +9,9 @@ sealed class UserModel with _$UserModel {
   const UserModel._();
 
   const factory UserModel({
-    @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'username') required String username,
-    @JsonKey(name: 'email_address') required String email,
+    required int id,
+    @JsonKey(name: 'first_name') required String username,
+    required String email,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
