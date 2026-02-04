@@ -9,7 +9,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: [HomeRoute(), ProfileRoute()],
+      routes: [HomeRoute(), UserProfileRoute(), ProfileRoute()],
       transitionBuilder: (context, child, animation) =>
           FadeTransition(opacity: animation, child: child),
       builder: (context, child) {
@@ -22,6 +22,10 @@ class DashboardPage extends StatelessWidget {
             onTap: tabsRouter.setActiveIndex,
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person_4),
+                label: 'User Profile',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
                 label: 'Profile',

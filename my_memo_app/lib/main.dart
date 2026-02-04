@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_memo_app/core/di/injection.dart';
 import 'package:my_memo_app/core/router/app_router.dart';
 
 void main() {
+  configureDependencies();
   runApp(MyApp());
 }
 
