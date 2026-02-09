@@ -1,0 +1,43 @@
+include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    - always_declare_return_types                    # Declare method return types.
+    - always_put_control_body_on_new_line            # Separate the control structure expression from its statement.
+    - always_put_required_named_parameters_first     # Put required named parameters first.
+    - annotate_overrides                             # Annotate overridden members.
+    - avoid_annotating_with_dynamic                  # Avoid annotating with dynamic when not required.
+    - avoid_bool_literals_in_conditional_expressions # Avoid bool literals in conditional expressions.
+    - avoid_catches_without_on_clauses               # Avoid catches without on clauses.
+    - avoid_dynamic_calls                            # Avoid method calls or property accesses on a dynamic target.
+    - avoid_empty_else                               # Avoid empty statements in else clauses.
+    - avoid_equals_and_hash_code_on_mutable_classes  # Avoid overloading operator == and hashCode on classes not marked @immutable.
+    - avoid_escaping_inner_quotes                    # Avoid escaping inner quotes by converting surrounding quotes.
+    - avoid_field_initializers_in_const_classes      # Avoid field initializers in const classes.
+    - avoid_implementing_value_types                 # Don't implement classes that overrigde ==.
+
+    - omit_local_variable_types                      # Omit type annotations for local variables.
+    
+    - prefer_asserts_in_initializer_lists            # Prefer putting asserts in initializer lists.
+    - prefer_asserts_with_message                    # Prefer asserts with message.
+    - prefer_const_constructors                      # Prefer const with constant constructors.
+    - prefer_const_constructors_in_immutables        # Prefer declaring const constructors on @immutable classes.
+    - prefer_const_declarations                      # Prefer const over final for declarations.
+    - prefer_const_literals_to_create_immutables     # Prefer const literals as parameters of constructors on @immutable classes.
+    - prefer_constructors_over_static_methods        # Prefer defining constructors instead of static methods to create instances.
+    - prefer_expression_function_bodies              # Use => for short memebers whose body is a single return statement.
+    - prefer_final_in_for_each                       # Prefer final in for-each loop variable if reference is not reassigned.
+    - prefer_final_locals                            # Prefer final for variable declarations if they are not reassigned.
+    - prefer_foreach                                 # Use foreach to only apply a function to all the elements.
+    - prefer_generic_function_type_aliases           # Prefer generic function type aliases.
+    - prefer_if_elements_to_conditional_expressions  # Prefer if elements to conditional expressions where possible.
+    - prefer_int_literals                            # Prefer int literals over double literals.
+    - prefer_is_empty                                # Use isEmpty for Iterables and Maps.
+    - prefer_is_not_empty                            # Use isNotEmpty for Iterables and Maps.
+    - prefer_iterable_whereType                      # Prefer to use whereType on iterable.
+    - prefer_mixin                                   # Prefer using mixins.
+    - prefer_null_aware_method_calls                 # Prefer null-aware method calls.
+    - prefer_relative_imports                        # Prefer relative imports for files in lib/
+    - prefer_single_quotes                           # Only use double quotes for strings containing single quotes.
+    - prefer_typing_uninitialized_variables          # Prefer typing uninitialized variables and fields.
+    - prefer_void_to_null                            # Don't use the Null type, unless you are positive that you don't want void.
